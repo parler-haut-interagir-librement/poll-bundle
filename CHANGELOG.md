@@ -4,6 +4,23 @@ All notable changes to `phil/poll-bundle` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
+## 0.2.0-alpha - 2026-11-14
+
+### Added
+
+- The Twig function `phil_poll_kit()`, the name under which a recipe of the kit is installed, and the option
+  `kit_subdirectory`, the subdirectory of the recipes under the components directory, read from the `ux_toolkit`
+  configuration when null.
+
+### Changed
+
+- `@PhilPoll/ballot.html.twig` and `@PhilPoll/results.html.twig` draw their parts with the recipes `Field`,
+  `RadioGroup`, `Checkbox`, `NativeSelect`, `Button` and `Progress`, installed from the PHIL UX kit or from the Shadcn
+  kit, so a site on Tailwind draws them too; the application installs the recipes and Symfony UX Twig Component. The
+  blocks `choices`, `status`, `actions`, `lines` and `revealed` stay, and the map `kit` of the recipes' names is
+  theirs to use.
+- `symfony/ux-twig-component: ^3.7` is required, no longer suggested: the templates do not render without it.
+
 ## 0.1.0-alpha - 2026-11-13
 
 ### Added
